@@ -1,0 +1,109 @@
+import React from "react";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import BorrowerCard from "./BorrowerCard";
+import { sampleBorrowers } from "@/data/borrowerData";
+
+const BorrowerPipeline: React.FC = () => {
+  return (
+    <div>
+      <Card>
+        <CardHeader>
+          <CardTitle>Borrower Pipeline</CardTitle>
+        </CardHeader>
+        
+        <CardContent>
+          <Tabs defaultValue="new">
+            <TabsList className="flex space-x-4 w-full">
+              <TabsTrigger value="new" className="flex-1 text-center">
+                New
+              </TabsTrigger>
+              <TabsTrigger value="in-review" className="flex-1 text-center">
+                In Review
+              </TabsTrigger>
+              <TabsTrigger value="approved" className="flex-1 text-center">
+                Approved
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="new">
+              {
+                sampleBorrowers
+                  .filter(borrower => borrower.status === "New")
+                  .map((borrower, index) => (
+                    <BorrowerCard 
+                      key={index}
+                      name={borrower.name}
+                      loanType={borrower.loanType}
+                      amount={borrower.amount}
+                      status={borrower.status}
+                    />
+                  ))
+              }
+            </TabsContent>
+
+            <TabsContent value="in-review">
+              {
+                sampleBorrowers
+                  .filter(borrower => borrower.status === "In Review")
+                  .map((borrower, index) => (
+                    <BorrowerCard 
+                      key={index}
+                      name={borrower.name}
+                      loanType={borrower.loanType}
+                      amount={borrower.amount}
+                      status={borrower.status}
+                    />
+                  ))
+              }
+            </TabsContent>
+
+            <TabsContent value="approved">
+              {
+                sampleBorrowers
+                  .filter(borrower => borrower.status === "Renew")
+                  .map((borrower, index) => (
+                    <BorrowerCard 
+                      key={index}
+                      name={borrower.name}
+                      loanType={borrower.loanType}
+                      amount={borrower.amount}
+                      status={borrower.status}
+                    />
+                  ))
+              }
+            </TabsContent>
+          </Tabs>
+          <hr className="my-6 border-t-2 border-gray-300" />
+
+        </CardContent>
+
+        <CardFooter className="-mt-6">
+          <div>
+            <h3 className="text-sm font-semibold text-uppercase">F-SANATISED ACTIVE</h3>
+            <div className="flex space-x-4 mt-2">
+              <label className="flex items-center space-x-2">
+                <input 
+                  type="radio" 
+                  name="sanitizedStatus" 
+                  value="active" 
+                  className="form-radio h-4 w-4 text-blue-500" />
+                <span>Active</span>
+              </label>
+              <label className="flex items-center space-x-2">
+                <input 
+                  type="radio" 
+                  name="sanitizedStatus" 
+                  value="inactive" 
+                  className="form-radio h-4 w-4 text-blue-500" />
+                <span>Inactive</span>
+              </label>
+            </div>
+          </div>
+        </CardFooter>
+      </Card>
+    </div>
+  );
+};
+
+export default BorrowerPipeline;
