@@ -5,9 +5,14 @@ import { colors } from "@/styles/colors";
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
   };
 
   return (
@@ -36,6 +41,13 @@ const Header: React.FC = () => {
             <div className="hidden md:flex space-x-4">
               <Button variant="outline">
                 <Search size={20} style={{ color: colors.accent }} />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  placeholder="Search..."
+                  className="p-2 border-none w-35 focus:outline-none focus:ring-0 "
+                />
               </Button>
 
               <Button variant="outline">
@@ -53,14 +65,23 @@ const Header: React.FC = () => {
           <div className="md:hidden mt-4 space-y-4">
             <Button variant="outline" className="w-full">
               <Search size={20} style={{ color: colors.accent }} />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={handleSearchChange}
+                placeholder="Search..."
+                className="p-2 border-none focus:outline-none focus:ring-0 "
+              />
             </Button>
 
             <Button variant="outline" className="w-full">
               <HelpCircle size={20} style={{ color: colors.primaryText }} />
+              <p>Help</p>
             </Button>
 
             <Button variant="outline" className="w-full">
               <Bell size={20} style={{ color: colors.secondaryText }} />
+              <p>Notifications</p>
             </Button>
           </div>
         )}

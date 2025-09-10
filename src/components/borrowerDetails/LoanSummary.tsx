@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import type { LoanSummaryDetails } from "@/types/LoanSummaryDetails";
 import { Button } from "../ui/button";
+import { colors } from "@/styles/colors";
 
 const LoanSummary: React.FC<LoanSummaryDetails> = ({
   employment,
@@ -27,46 +28,66 @@ const LoanSummary: React.FC<LoanSummaryDetails> = ({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div className="flex flex-col space-y-2">
               <div className="flex items-center space-x-2">
-                <Briefcase size={18} />
+                <Briefcase size={18} style={{ color: colors.gray }}/>
                 <div className="flex justify-between w-full items-center">
-                  <p className="font-semibold text-sm w-1/3">Employment: </p>
+                  <p
+                    className="font-semibold text-sm w-1/3"
+                    style={{ color: colors.gray }}
+                  >
+                    Employment:{" "}
+                  </p>
                   <p className="w-2/3 text-right">{employment}</p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
-                <CreditCard size={18} />
+                <CreditCard size={18} style={{ color: colors.gray }}/>
                 <div className="flex justify-between w-full items-center">
-                  <p className="font-semibold text-sm w-2/3">Existing Loan: </p>
-                  <p className="w-2/3 text-right">{existingLoan}</p>
+                  <p
+                    className="font-semibold text-sm w-2/3"
+                    style={{ color: colors.gray }}
+                  >
+                    Existing Loan:
+                  </p>
+                  <p className="w-2/3 text-right">Rs. {existingLoan}</p>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col space-y-2">
               <div className="flex items-center space-x-2">
-                <BarChart size={18} />
+                <BarChart size={18} style={{ color: colors.gray }}/>
                 <div className="flex justify-between w-full items-center">
-                  <p className="font-semibold text-sm w-2/3">Credit Score: </p>
+                  <p
+                    className="font-semibold text-sm w-2/3"
+                    style={{ color: colors.gray }}
+                  >
+                    Credit Score:{" "}
+                  </p>
                   <p className="w-2/3 text-right">{creditScore}</p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
-                <DollarSign size={18} />
+                <DollarSign size={18} style={{ color: colors.gray }}/>
                 <div className="flex justify-between w-full items-center">
-                  <p className="font-semibold text-sm w-2/3">Source of Funds: </p>
+                  <p
+                    className="font-semibold text-sm w-2/3"
+                    style={{ color: colors.gray }}
+                  >
+                    Source of Funds:{" "}
+                  </p>
                   <p className="w-2/3 text-right">{sourceOfFunds}</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <Card className="mt-4">
+          <Card className="mt-4 h-20 justify-center" style={{backgroundColor: colors.lightYellow, borderColor: colors.darkYellow}}>
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
-                <AlertCircle size={20} className="text-red-500" />
+                <AlertCircle size={20} style={{color: colors.darkYellow}}/>
                 <span>Risk Signal</span>
               </CardTitle>
-              <p className="text-red-500">
+              <p style={{color: colors.darkRed}}>
                 Missing Source of Funds declaration.
               </p>
             </CardHeader>

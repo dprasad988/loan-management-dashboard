@@ -8,6 +8,7 @@ import {
 import { Button } from "../ui/button";
 import type { BorrowerDetails } from "@/types/BorrowerDetails";
 import { DollarSign, Mail, Phone } from "lucide-react";
+import { colors } from "@/styles/colors";
 
 const Header: React.FC<BorrowerDetails> = ({
   name,
@@ -27,18 +28,18 @@ const Header: React.FC<BorrowerDetails> = ({
         <CardContent className="-mt-4 flex justify-between">
           <div className="flex flex-col lg:flex-row md:flex-col md:space-y-1 space-x-4 space-y-2 sm:space-y-0">
             <div className="flex items-center space-x-2">
-              <Mail size={20} />
-              <p>{email}</p>
+              <Mail size={20} style={{ color: colors.gray }}/>
+              <p style={{ color: colors.gray }}>{email}</p>
             </div>
 
             <div className="flex items-center space-x-2">
-              <Phone size={20} />
-              <p>{phone}</p>
+              <Phone size={20} style={{ color: colors.gray }}/>
+              <p style={{ color: colors.gray }}>{phone}</p>
             </div>
 
             <div className="flex items-center space-x-2">
-              <DollarSign size={20} />
-              <p>{amount}</p>
+              <DollarSign size={20} style={{ color: colors.gray }}/>
+              <p style={{ color: colors.gray }}>{amount}</p>
             </div>
           </div>
         </CardContent>

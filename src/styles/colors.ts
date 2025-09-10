@@ -5,6 +5,7 @@ export const colors = {
   dark: '#333',
   light: '#F9F9F9',
   lightRed: '#FEF2F2',
+  darkRed: '#d30000',
 
   primaryText: '#1A202C', 
   secondaryText: '#4A5568', 
@@ -12,6 +13,11 @@ export const colors = {
   lightText: '#EDF2F7',
   darkText: '#2D3748',
   warningRed: '#CC352D',
-  warningYellow: '#FFB800',
-  red: '#E74C3C'
+  lightYellow: '#fffae5',
+  darkYellow: '#ffd819',
+  red: '#E74C3C',
+  gray: '#837D80',
+  blue: '#0096c7',
+  darkgray: '#545F6E',
+  green: '#29bf12',
 };

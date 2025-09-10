@@ -13,7 +13,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
-import { AlertCircle, AlertTriangle, Brain, ChevronDown } from "lucide-react";
+import { AlertCircle, AlertTriangle, Brain } from "lucide-react";
 import { colors } from "@/styles/colors";
 
 const AISection: React.FC = () => {
@@ -22,7 +22,7 @@ const AISection: React.FC = () => {
       <Card className="mt-3">
         <CardHeader className="flex flex-row justify-between items-center">
           <CardTitle className="text-lg flex items-center space-x-2">
-            <Brain size={20} className="text-gray-600" />
+            <Brain size={20} style={{color: colors.darkgray}}/>
             <span>AI Explainability</span>
           </CardTitle>
         </CardHeader>
@@ -34,7 +34,7 @@ const AISection: React.FC = () => {
                 className="flex items-center space-x-2 px-4"
                 style={{ backgroundColor: colors.dark }}
               >
-                <AlertTriangle size={20} className="text-red-500" />
+                <AlertTriangle size={20} style={{color: colors.red}} />
                 <span style={{ color: colors.lightText }}>
                   Risk Flags Detected (2)
                 </span>
@@ -42,7 +42,7 @@ const AISection: React.FC = () => {
 
               <AccordionContent>
                 <Card
-                  style={{ backgroundColor: colors.lightRed }}
+                  style={{ backgroundColor: colors.lightRed, borderColor: colors.warningRed }}
                   className="mb-2 mt-2 h-10 p-2 justify-content-center rounded-sm"
                 >
                   <CardHeader>
@@ -60,7 +60,7 @@ const AISection: React.FC = () => {
 
                 <Card
                   className="h-10 p-2 justify-content-center rounded-sm"
-                  style={{ backgroundColor: colors.lightRed }}
+                  style={{ backgroundColor: colors.lightRed, borderColor: colors.warningRed }}
                 >
                   <CardHeader>
                     <CardTitle className="flex items-center space-x-2">
@@ -74,7 +74,7 @@ const AISection: React.FC = () => {
                     </CardTitle>
                   </CardHeader>
                 </Card>
-                <hr className="mt-5 border-t-2 border-gray-300" />
+                <hr className="mt-5 border-t-2" style={{color: colors.gray}}/>
               </AccordionContent>
             </AccordionItem>
           </Accordion>

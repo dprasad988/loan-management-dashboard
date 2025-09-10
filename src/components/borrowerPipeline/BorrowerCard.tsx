@@ -8,12 +8,13 @@ import {
 } from "../ui/card";
 import type { BorrowerDetails } from "@/types/BorrowerDetails";
 import { Button } from "../ui/button";
+import { colors } from "@/styles/colors";
 
 const BorrowerCard: React.FC<BorrowerDetails> = ({
-    name,
-    loanType,
-    amount,
-    status,
+  name,
+  loanType,
+  amount,
+  status,
 }) => {
   return (
     <>
@@ -26,7 +27,9 @@ const BorrowerCard: React.FC<BorrowerDetails> = ({
 
           <CardContent className="-mt-4">
             <div>
-              <p className="sm:text-sm">{loanType}</p>
+              <p className="sm:text-sm" style={{ color: colors.gray }}>
+                {loanType}
+              </p>
             </div>
           </CardContent>
 
