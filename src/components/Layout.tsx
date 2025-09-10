@@ -1,13 +1,15 @@
-import Dashboard from './Dashboard'
-import Header from './header/header'
+import Dashboard from "./Dashboard";
+import Header from "./header/header";
 
 function Layout() {
   return (
     <div>
-      <Header/>
-      <Dashboard/>
+      <Header />
+      <div className="mt-18">
+        <Dashboard />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

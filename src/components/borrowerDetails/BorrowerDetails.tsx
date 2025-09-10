@@ -1,6 +1,9 @@
 import React from "react";
 import { sampleBorrowers } from "@/data/borrowerData";
 import Header from "./Header";
+import AISection from "./AISection";
+import { loanSummaryData } from "@/data/loanSummaryData";
+import LoanSummary from "./LoanSummary";
 
 const BorrowerDetails: React.FC = () => {
   return (
@@ -18,6 +21,19 @@ const BorrowerDetails: React.FC = () => {
             status={borrower.status}
           />
         ))}
+
+        <AISection/>
+        {
+            loanSummaryData.map((data, index) => (
+                <LoanSummary 
+                    key={index}
+                    employment={data.employment}
+                    existingLoan={data.existingLoan}
+                    creditScore={data.creditScore}
+                    sourceOfFunds={data.sourceOfFunds}
+                />
+            ))
+        }
     </>
   );
 };

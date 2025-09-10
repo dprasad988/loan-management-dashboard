@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
-import { Bell, HelpCircle, Search } from 'lucide-react';
+import React, { useState } from "react";
+import { Bell, HelpCircle, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { colors } from '@/styles/colors'; 
+import { colors } from "@/styles/colors";
 
 const Header: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false); 
-  
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
   return (
-    <header style={{ backgroundColor: colors.dark }} className="w-full p-4">
+    <header
+      style={{ backgroundColor: colors.dark }}
+      className="w-full p-4 fixed top-0 left-0 right-0 z-40"
+    >
       <div className="container mx-auto">
         <div className="flex items-center justify-between md:grid md:grid-cols-3">
           <div
@@ -61,7 +64,6 @@ const Header: React.FC = () => {
             </Button>
           </div>
         )}
-        
       </div>
     </header>
   );

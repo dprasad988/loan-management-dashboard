@@ -25,7 +25,7 @@ const Header: React.FC<BorrowerDetails> = ({
         </CardHeader>
 
         <CardContent className="-mt-4 flex justify-between">
-          <div className="flex space-x-4">
+          <div className="flex flex-col lg:flex-row md:flex-col md:space-y-1 space-x-4 space-y-2 sm:space-y-0">
             <div className="flex items-center space-x-2">
               <Mail size={20} />
               <p>{email}</p>

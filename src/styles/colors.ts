@@ -4,9 +4,14 @@ export const colors = {
   accent: '#00D1B2',
   dark: '#333',
   light: '#F9F9F9',
+  lightRed: '#FEF2F2',
+
   primaryText: '#1A202C', 
   secondaryText: '#4A5568', 
   mutedText: '#718096',
   lightText: '#EDF2F7',
-  darkText: '#2D3748', 
+  darkText: '#2D3748',
+  warningRed: '#CC352D',
+  warningYellow: '#FFB800',
+  red: '#E74C3C'
 };
